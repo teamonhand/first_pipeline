@@ -1,5 +1,6 @@
+
 pipeline {
-    agent { any
+    agent any
     stages {
         stage('build') {
             steps {
@@ -9,7 +10,7 @@ pipeline {
 			echo "multiline shell steps work too"
 			ls -lah
 		   '''
-            }
+           }
         }
     }
 }
