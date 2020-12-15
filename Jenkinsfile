@@ -1,9 +1,14 @@
 pipeline {
-    agent { docker { image 'python:3.5.1' } }
+    agent { any
     stages {
         stage('build') {
             steps {
+		sh 'echo "Hello world"'
                 sh 'python --version'
+		sh '''
+			echo "multiline shell steps work too"
+			ls -lah
+		   '''
             }
         }
     }
